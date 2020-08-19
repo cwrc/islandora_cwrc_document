@@ -6,3 +6,5 @@ dependencies[] = islandora_object_lock_rest
 core = 7.x
 version = 7.x-dev
 package = Islandora Tools
+files[] = includes/upload.form.inc
+files[] = includes/utilities.inc

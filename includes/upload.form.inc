@@ -17,6 +17,8 @@
  */
 function islandora_cwrc_document_upload_form($form, $form_state) {
   module_load_include('inc', 'islandora_cwrc_document', 'includes/utilities');
+  module_load_include('module', 'islandora_cwrc_document', 'islandora_cwrc_document');
+
   $definition = array();
   $definition['source'] = array(
     '#title' => t('Create Document:'),
@@ -114,6 +116,7 @@ function islandora_cwrc_document_upload_form_submit($form, $form_state) {
   module_load_include('inc', 'islandora', 'includes/ingest.form.inc');
   module_load_include('inc', 'islandora_cwrc_writer', 'includes/utilities');
   $object = islandora_ingest_form_get_object($form_state);
+  // The ingest bug related to the licensing label development will get here, and not have the CWRC object in the form_state array.
   if (!isset($object['CWRC'])) {
     $ds = $object->constructDatastream('CWRC', 'M');
     $object->ingestDatastream($ds);
