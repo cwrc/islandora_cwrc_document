@@ -14,6 +14,8 @@ define('ISLANDORA_CWRC_DOCUMENT_VIEW_CWRC', 'view CWRC datastreams');
 define('ISLANDORA_CWRC_DOCUMENT_ANNOTATE_CWRC', 'annotate CWRC datastreams');
 define('ISLANDORA_CWRC_DOCUMENT_EDIT_CWRC', 'edit CWRC datastreams');
 
+module_load_include('inc', 'islandora_cwrc_document', 'includes/upload.form');
+
 /**
  * Implements hook_menu().
  */
